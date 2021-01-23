@@ -1,38 +1,63 @@
-.App {
-  text-align: center;
+.pointer{
+  cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.font-italic{
+  font-style: italic;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.font-x-large{
+  font-size: 1.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.font-family-cursive{
+  font-family: cursive;
 }
 
-.App-link {
-  color: #61dafb;
+.text-bold{
+  font-weight: bold;
+}
+.bg-blue{
+  background-color: #016AA7;
+}
+.opacity-50{
+  opacity: 0.50;
+}
+.board{
+  position: relative;
+}
+.board img{
+  width: 210px;
+  height: 103px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.board:hover{
+  opacity: 0.95;
+}
+
+.board-text{
+  top: 0;
+  left: 25px;
+  position: absolute;
+}
+.board-create{
+  position: absolute;
+  top: 40px;
+  left: 35px;
+
+}
+.board-create-size{
+  width: 210px;
+  height: 103px;
+}
+.cards-container{
+  background-color: rgb(238, 255, 0);
+  height: 100px;
+  width: 100%;
+}
+
+.List{
+  background-color: aqua;
+  height: 500px;
+  width: 300px;
 }
