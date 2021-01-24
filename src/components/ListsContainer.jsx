@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
+import List from "./List";
+import Box from '@material-ui/core/Box';
 import axios from 'axios';
 import apis from "../apis/apis";
 import { constants } from "../constants";
-// import CardsContainer from 'CardsContainer';
-import List from "./List";
-import AddAnotherCard from './AddAnotherCard';
-import Box from '@material-ui/core/Box';
+import AddNewList from "./AddNewList";
 
  class ListsContainer extends Component {
 
@@ -18,6 +17,10 @@ import Box from '@material-ui/core/Box';
         }
     }
   componentDidMount(){
+        this.handleGetAllLists();
+    }
+
+    handleGetAllLists=()=>{
         const {boardId} = this.state;
         axios.get(apis.getAllLists.replace("{id}",boardId),{
             params:{
@@ -35,19 +38,17 @@ import Box from '@material-ui/core/Box';
         })
     }
 
-
     render() {
-        const {lists} = this.state;
+        const {lists,boardId} = this.state;
         document.body.style.overflowX = "auto";
         return (
             <Box marginTop={5} padding={1} paddingTop={3} position="absolute" display="flex">
                 {
-                    lists.map((list,index)=>{
-                        return <List list={list} key={index}/>
+                    lists.map((list)=>{
+                        return <List list={list} key={list.id} handleGetAllLists={this.handleGetAllLists}/>
                     })
                 }
-                
-                {/* <AddAnotherCard/> */}
+                <AddNewList boardId={boardId} handleGetAllLists={this.handleGetAllLists}/>
             </Box>
         )
     }

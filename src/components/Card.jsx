@@ -1,13 +1,22 @@
 import React from 'react'
-import {Box, Paper} from '@material-ui/core'
+import {Box, Paper, withStyles} from '@material-ui/core'
+
+const styles = {
+    paper: {
+        '&:hover': {
+            background: "#EBECF0",
+        },
+        cursor: 'pointer'
+    }
+}
+
 
 function Card(props) {
-const {card} = props;
-console.log(card.name);
+    const {card} = props;
     return (
         <Box padding={0.5}>
-           <Paper elevation={3} variant="outlined">
-                <Box padding={0.5}>
+           <Paper className={props.classes.paper} elevation={3} variant="outlined">
+                <Box padding={0.5} fontSize={14}>
                     {card.name}
                 </Box>
            </Paper>
@@ -15,4 +24,4 @@ console.log(card.name);
     )
 }
 
-export default Card
+export default withStyles(styles)(Card);

@@ -6,10 +6,10 @@ class CardsContainer extends React.Component {
     render(){
         const {cards} = this.props
         return (
-            <Box>
+            <Box maxHeight={500} overflow="auto">
                 {
-                    cards.map((card,index)=>{
-                        return <Card card = {card} key ={index}/>               
+                    cards.map((card)=>{
+                        return <Card card = {card} key={card.id}/>               
                     })
                 }
                 
