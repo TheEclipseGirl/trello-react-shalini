@@ -7,7 +7,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import { NotificationContainer } from "react-notifications";
 import 'react-notifications/lib/notifications.css';

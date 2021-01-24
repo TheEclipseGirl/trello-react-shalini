@@ -30,6 +30,12 @@ import constants from "../constants";
        })
      }
 
+     handleKeyPressEnter = (event) => {
+         if(event.key === 'Enter'){
+             this.handleClickAddlist();
+         }
+     }
+
      handleClickAddlist = ()=>{
          if(this.state.addNewListInput===''){
             NotificationManager.error('','Add list name',2000) 
@@ -76,7 +82,7 @@ import constants from "../constants";
             return (
                 <Box width={200}> 
                     <Box>
-                        <TextField id="filled-basic" label="Enter list title..." variant="filled" value={addNewListInput} onChange={this.handleInputChange} />
+                        <TextField id="filled-basic" label="Enter list title..." variant="filled" onKeyPress={this.handleKeyPressEnter} value={addNewListInput} onChange={this.handleInputChange} />
                     </Box>
 
                     <Box>
