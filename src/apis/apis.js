@@ -6,7 +6,8 @@ const apis = {
     getAllCards:`${domain}/lists/{id}/cards`,
     createNewBoard: `${domain}/boards/`,
     createNewlist:`${domain}/lists`,
-    archievelist:`${domain}/lists/{id}/closed`
+    archievelist:`${domain}/lists/{id}/closed`,
+    createNewCard:`${domain}/cards`
 }
 
 export default apis;

@@ -39,6 +39,9 @@ class List extends React.Component {
     }
 
    componentDidMount(){
+       this.handleGetAllCards();
+    }
+    handleGetAllCards = ()=>{
         axios.get(apis.getAllCards.replace("{id}", this.props.list.id) ,{
             params:{
                 key:constants.key,
@@ -72,7 +75,7 @@ class List extends React.Component {
                                </Box>
                             </Box>
                             <CardsContainer cards ={cards}/>
-                            <AddAnotherCard/>
+                            <AddAnotherCard id={this.props.list.id} handleGetAllCards={this.handleGetAllCards}/>
                         </Box>
                     </Paper>
                 </Box>
