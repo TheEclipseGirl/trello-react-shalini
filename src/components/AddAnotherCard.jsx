@@ -33,6 +33,10 @@ import constants from '../constants'
      }
 
      handleClickAddCard=()=>{
+        if(this.state.addNewCardInput===''){
+            NotificationManager.error('','Add list name',2000) 
+            return; 
+         }
          axios.post(apis.createNewCard,{},{
              params:{
                  key:constants.key,

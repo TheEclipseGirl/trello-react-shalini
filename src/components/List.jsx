@@ -74,7 +74,7 @@ class List extends React.Component {
                                     </IconButton>
                                </Box>
                             </Box>
-                            <CardsContainer cards ={cards}/>
+                            <CardsContainer handleGetAllCards={this.handleGetAllCards} cards ={cards}/>
                             <AddAnotherCard id={this.props.list.id} handleGetAllCards={this.handleGetAllCards}/>
                         </Box>
                     </Paper>
