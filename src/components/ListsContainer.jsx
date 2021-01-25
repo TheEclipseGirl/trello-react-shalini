@@ -5,6 +5,8 @@ import axios from 'axios';
 import apis from "../apis/apis";
 import { constants } from "../constants";
 import AddNewList from "./AddNewList";
+import ChecklistPopUpContainer from './ChecklistPopUpContainer'
+
 
  class ListsContainer extends Component {
 
@@ -13,11 +15,28 @@ import AddNewList from "./AddNewList";
     
         this.state = {
              boardId: this.props.match.params.id,
-             lists:[]
+             lists:[],
+             showChecklistPopUp:false,
+             card:{}
         }
     }
-  componentDidMount(){
+
+    componentDidMount(){
         this.handleGetAllLists();
+    }
+
+    toggleChecklistPopUp = ()=>{
+        this.setState((prevState)=>{
+            return {
+                showChecklistPopUp:!prevState.showChecklistPopUp
+            }
+        })
+    }
+
+    setCard = (card)=>{
+        this.setState({
+            card
+        })
     }
 
     handleGetAllLists=()=>{
@@ -39,17 +58,21 @@ import AddNewList from "./AddNewList";
     }
 
     render() {
-        const {lists,boardId} = this.state;
+        const {lists,boardId,showChecklistPopUp,card} = this.state;
         document.body.style.overflowX = "auto";
         return (
             <Box marginTop={5} padding={1} paddingTop={3} position="absolute" display="flex">
                 {
                     lists.map((list)=>{
-                        return <List list={list} key={list.id} handleGetAllLists={this.handleGetAllLists}/>
+                        return <List list={list} key={list.id} handleGetAllLists={this.handleGetAllLists} toggleChecklistPopUp={this.toggleChecklistPopUp} setCard={this.setCard}/>
                     })
                 }
                 <AddNewList boardId={boardId} handleGetAllLists={this.handleGetAllLists}/>
+                {
+                    showChecklistPopUp && <ChecklistPopUpContainer card={card} toggleChecklistPopUp={this.toggleChecklistPopUp}/>
+                }
             </Box>
+            
         )
     }
 }

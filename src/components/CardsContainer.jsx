@@ -9,7 +9,7 @@ class CardsContainer extends React.Component {
             <Box maxHeight={500} overflow="auto">
                 {
                     cards.map((card)=>{
-                        return <Card handleGetAllCards={this.props.handleGetAllCards} card = {card} key={card.id}/>               
+                        return <Card handleGetAllCards={this.props.handleGetAllCards} card = {card} key={card.id} toggleChecklistPopUp={this.props.toggleChecklistPopUp} setCard={this.props.setCard}/>               
                     })
                 }
                 

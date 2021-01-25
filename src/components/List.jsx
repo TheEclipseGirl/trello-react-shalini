@@ -74,7 +74,7 @@ class List extends React.Component {
                                     </IconButton>
                                </Box>
                             </Box>
-                            <CardsContainer handleGetAllCards={this.handleGetAllCards} cards ={cards}/>
+                            <CardsContainer handleGetAllCards={this.handleGetAllCards} cards ={cards} toggleChecklistPopUp={this.props.toggleChecklistPopUp} setCard={this.props.setCard}/>
                             <AddAnotherCard id={this.props.list.id} handleGetAllCards={this.handleGetAllCards}/>
                         </Box>
                     </Paper>

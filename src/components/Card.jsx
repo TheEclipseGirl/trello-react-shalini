@@ -49,24 +49,28 @@ class Card extends React.Component {
           console.log("Error", error);
       })
     }
+
+    handleCardNameClick = ()=>{
+        this.props.setCard(this.props.card);
+        this.props.toggleChecklistPopUp();
+    }
     
     render(){
     const {card} = this.props;
         return (
             <Box padding={0.5}>
-            <Paper className={this.props.classes.paper} elevation={3} variant="outlined">
-                    <Box padding={0.5} fontSize={14} display="flex" justifyContent="space-between" alignItems="center">
-                        <Box>
-                            {card.name} 
+                <Paper className={this.props.classes.paper} elevation={3} variant="outlined">
+                        <Box padding={0.5} fontSize={14} display="flex" justifyContent="space-between" alignItems="center">
+                            <Box onClick={this.handleCardNameClick}>
+                                {card.name} 
+                            </Box>
+                            <Box>
+                                <IconButton className={this.props.classes.deleteBtn} aria-label="delete" size="small" onClick={this.handleClickDeleteCard}>
+                                    <i className="far fa-times-circle"></i>
+                                </IconButton>
+                            </Box>
                         </Box>
-                        <Box>
-                            <IconButton className={this.props.classes.deleteBtn} aria-label="delete" size="small" onClick={this.handleClickDeleteCard}>
-                                <i className="far fa-times-circle"></i>
-                            </IconButton>
-                        </Box>
-
-                    </Box>
-            </Paper>
+                </Paper>
             </Box>
         )
     }
