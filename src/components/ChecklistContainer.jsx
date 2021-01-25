@@ -4,9 +4,14 @@ import Checklist from './Checklist'
 
  class ChecklistContainer extends Component {
     render() {
+        const {checklists}= this.props;
         return (
             <Box marginTop={5}>
-                <Checklist/>
+                {
+                    checklists.map((checklist)=>{
+                       return <Checklist getAllChecklistsOnACard={this.props.getAllChecklistsOnACard} checklist={checklist} key={checklist.id}/>
+                    })
+                }
             </Box>
         )
     }

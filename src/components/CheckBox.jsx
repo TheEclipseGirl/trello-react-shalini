@@ -6,8 +6,11 @@ import React, { Component } from 'react'
     constructor(props) {
         super(props)
     
+        let checked;
+        this.props.checkbox.state === 'complete' ? checked = true : checked=false
+
         this.state = {
-             checked: false,             
+             checked: checked,             
         }
     }
     
@@ -19,6 +22,7 @@ import React, { Component } from 'react'
 
     render() {
         const {checked} = this.state;
+        const {checkbox} = this.props;
         let textDecoration;
         checked ? textDecoration = 'line-through' : textDecoration = 'auto';
         return (
@@ -26,7 +30,7 @@ import React, { Component } from 'react'
                 <FormGroup row>
                     <FormControlLabel
                         control={<Checkbox checked={checked} onChange={this.handleChange}/>}
-                        label="Secondary"
+                        label={checkbox.name}
                         style={{textDecoration: textDecoration}}
                     />
                 </FormGroup>

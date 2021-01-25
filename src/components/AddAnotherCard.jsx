@@ -68,8 +68,6 @@ import constants from '../constants'
     }
 
     render() {
-        // console.log("ListId", this.props.id);
-
        const {showAddAnotherCardBtn,addNewCardInput} = this.state;
        if(showAddAnotherCardBtn){
         return (
