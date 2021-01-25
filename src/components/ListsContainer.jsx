@@ -59,9 +59,9 @@ import ChecklistPopUpContainer from './ChecklistPopUpContainer'
 
     render() {
         const {lists,boardId,showChecklistPopUp,card} = this.state;
-        document.body.style.overflowX = "auto";
+        // document.body.style.overflowX = "auto";
         return (
-            <Box marginTop={5} padding={1} paddingTop={3} position="absolute" display="flex">
+            <Box style={{overflowX: 'scroll', height: '100vh',width: '100vw'}} paddingTop='10vh' paddingLeft={1} paddingRight={1} position="absolute" display="flex">
                 {
                     lists.map((list)=>{
                         return <List list={list} key={list.id} handleGetAllLists={this.handleGetAllLists} toggleChecklistPopUp={this.toggleChecklistPopUp} setCard={this.setCard}/>

@@ -16,7 +16,7 @@ const styles = {
     popUp:{
         backgroundColor: '#FAFBFC',
         height:"80%",
-        width:"50%"
+        width:"80%"
     }
 
 }
@@ -48,8 +48,8 @@ const styles = {
   render() {
         const {showCreateChecklist,checklistName} = this.state;
         return (
-            <Box display="flex" justifyContent="center" alignItems="center" className={this.props.classes.popUpContainer}>
-                 <Box overflow="auto" paddingBottom={10} border={3} className={this.props.classes.popUp} paddingLeft="30px" paddingRight="30px">
+            <Box display="flex" zIndex={2} justifyContent="center" alignItems="center" className={this.props.classes.popUpContainer}>
+                 <Box overflow="auto" paddingBottom={10} border={3} className={`popup ${this.props.classes.popUp}`} paddingLeft="30px" paddingRight="30px">
                     <Box display="flex" justifyContent="flex-end" alignItems="center" onClick={this.props.toggleChecklistPopUp}>
                         <IconButton color="info" aria-label="add to shopping cart">
                             <i class="fas fa-times"></i>

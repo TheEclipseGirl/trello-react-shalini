@@ -68,7 +68,7 @@ const styles = {
         return (
             <Box display="flex" justifyContent="center" alignItems="center" className={this.props.classes.popUpContainer}>
               
-                    <Box boxShadow={10} className={this.props.classes.popUp} paddingLeft={8} paddingRight={8} paddingBottom={5} paddingTop={3}>
+                    <Box boxShadow={10} className={`popup ${this.props.classes.popUp}`} paddingLeft={8} paddingRight={8} paddingBottom={5} paddingTop={3}>
                         <Box fontSize={28} fontWeight="bold" textAlign="center" padding={1}>
                             Create a Board
                         </Box>

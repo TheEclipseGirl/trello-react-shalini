@@ -1,3 +1,9 @@
+body{
+  /* height: 100vh; */
+  width: 100vw;
+  /* overflow: hidden; */
+}
+
 .pointer{
   cursor: pointer;
 }
@@ -60,4 +66,19 @@
   background-color: aqua;
   height: 500px;
   width: 300px;
+}
+
+.popup {
+  animation-name: popup;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes popup {
+  from {
+    transform: scale(0);
+  }
+  to{
+    transform: scale(1);
+  }
 }

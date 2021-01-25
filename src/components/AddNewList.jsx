@@ -68,9 +68,10 @@ import constants from "../constants";
         const {showBtn,addNewListInput} = this.state;
         if(showBtn){
             return (
-                <Box width={200}>
+                <Box width={200} paddingRight={30}>
                     
                     <Button
+                        style={{width: 200}}
                         variant="contained"
                         color="default"
                         endIcon={<i className="fas fa-plus"></i>} onClick={this.toggleShowBtn}>
@@ -80,13 +81,13 @@ import constants from "../constants";
             )
         }else{
             return (
-                <Box width={200}> 
+                <Box width={200} paddingRight={30}> 
                     <Box>
-                        <TextField id="filled-basic" label="Enter list title..." variant="filled" onKeyPress={this.handleKeyPressEnter} value={addNewListInput} onChange={this.handleInputChange} />
+                        <TextField style={{width: 200}} id="filled-basic" label="Enter list title..." variant="filled" onKeyPress={this.handleKeyPressEnter} value={addNewListInput} onChange={this.handleInputChange} />
                     </Box>
 
-                    <Box>
-                        <Button variant="contained" size="small" color="primary" onClick={this.handleClickAddlist}>
+                    <Box display="flex" width={200} marginTop={2} justifyContent="space-between">
+                        <Button style={{width: 150}} variant="contained" size="small" color="primary" onClick={this.handleClickAddlist}>
                             Add list
                         </Button>
 
